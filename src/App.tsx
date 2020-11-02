@@ -1,6 +1,8 @@
 import React from "react";
 import TodoListWithHook from "./component/TodoListWithHook";
+import TodoListWithContext from "./component/TodoListWithContext";
 import styled from "styled-components";
+import TodoProvider from "./component/TodoContext";
 
 function App() {
   return (
@@ -8,7 +10,12 @@ function App() {
       <TodoListWithHookContainer>
         <TodoListWithHook />
       </TodoListWithHookContainer>
-      <TodoListWithContextContainer></TodoListWithContextContainer>
+
+      <TodoProvider>
+        <TodoListWithContextContainer>
+          <TodoListWithContext />
+        </TodoListWithContextContainer>
+      </TodoProvider>
     </Container>
   );
 }
